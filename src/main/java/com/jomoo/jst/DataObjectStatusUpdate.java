@@ -2,81 +2,82 @@ package com.jomoo.jst;
 
 import net.sf.json.JSONObject;
 
+/**
+ * 更新工单状态
+ *
+ * @author nodie
+ * @Time 2018-10-12 11:50:44
+ */
 public class DataObjectStatusUpdate {
-	
-	private String workcardidString;
-	private String tpidString;
-	private int status;
-	private int type;
-	private String updatadateString;
-	private String commentsString;
+    private String workcardidString;    //工单id
+    private String tpidString;          //服务提供商id
+    private int status;                 //状态,0:订单已退货，1:订单已签收，2:订单已拒签
+    private int type;                   //工单类型,固定值:1
+    private String updatadateString;    //跟新时间
+    private String commentsString;      //备注
 
-	
+    // {"workcard_id":46347333,"Tp_id":3103721290,"status":16,"update_date":"2018-03-16 11:31:28","type":1,"comments":"null"}
+    public DataObjectStatusUpdate jsonToDataStatusUpdate(String jsonString) {
+        DataObjectStatusUpdate dataObject = new DataObjectStatusUpdate();
+        JSONObject resultJsonObject = JSONObject.fromObject(jsonString);
 
-	public String getWorkcardidString() {
-		return workcardidString;
-	}
+        dataObject.setWorkcardidString(resultJsonObject.getString("workcard_id"));
+        dataObject.setTpidString(resultJsonObject.getString("Tp_id"));
+        dataObject.setStatus(resultJsonObject.getInt("status"));
+        dataObject.setUpdatadateString(resultJsonObject.getString("update_date"));
+        dataObject.setType(resultJsonObject.getInt("type"));
+        dataObject.setCommentsString(resultJsonObject.getString("comments"));
 
-	public void setWorkcardidString(String workcardidString) {
-		this.workcardidString = workcardidString;
-	}
+        return dataObject;
+    }
 
-	public String getTpidString() {
-		return tpidString;
-	}
+    public String getCommentsString() {
+        return commentsString;
+    }
 
-	public void setTpidString(String tpidString) {
-		this.tpidString = tpidString;
-	}
+    public void setCommentsString(String commentsString) {
+        this.commentsString = commentsString;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	public int getType() {
-		return type;
-	}
+    public String getTpidString() {
+        return tpidString;
+    }
 
-	public void setType(int type) {
-		this.type = type;
-	}
+    public void setTpidString(String tpidString) {
+        this.tpidString = tpidString;
+    }
 
-	public String getUpdatadateString() {
-		return updatadateString;
-	}
+    public int getType() {
+        return type;
+    }
 
-	public void setUpdatadateString(String updatadateString) {
-		this.updatadateString = updatadateString;
-	}
+    public void setType(int type) {
+        this.type = type;
+    }
 
-	public String getCommentsString() {
-		return commentsString;
-	}
+    public String getUpdatadateString() {
+        return updatadateString;
+    }
 
-	public void setCommentsString(String commentsString) {
-		this.commentsString = commentsString;
-	}
+    public void setUpdatadateString(String updatadateString) {
+        this.updatadateString = updatadateString;
+    }
 
+    public String getWorkcardidString() {
+        return workcardidString;
+    }
 
-	//{"workcard_id":46347333,"Tp_id":3103721290,"status":16,"update_date":"2018-03-16 11:31:28","type":1,"comments":"null"}
-	
-
-	
-	public DataObjectStatusUpdate jsonToDataStatusUpdate(String jsonString) {
-		DataObjectStatusUpdate dataObject = new DataObjectStatusUpdate();
-		
-		JSONObject resultJsonObject = JSONObject.fromObject(jsonString);
-		dataObject.setWorkcardidString(resultJsonObject.getString("workcard_id"));
-		dataObject.setTpidString(resultJsonObject.getString("Tp_id"));
-		dataObject.setStatus(resultJsonObject.getInt("status"));
-		dataObject.setUpdatadateString(resultJsonObject.getString("update_date"));
-		dataObject.setType(resultJsonObject.getInt("type"));
-		dataObject.setCommentsString(resultJsonObject.getString("comments"));
-				
-		return dataObject;
-	}
+    public void setWorkcardidString(String workcardidString) {
+        this.workcardidString = workcardidString;
+    }
 }
+
+

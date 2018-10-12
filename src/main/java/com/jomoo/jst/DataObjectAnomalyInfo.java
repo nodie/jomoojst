@@ -3,11 +3,20 @@ package com.jomoo.jst;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+
+/**
+ *
+ * 一键求助单
+ *
+ * @author nodie
+ * @Time 2018-10-12 11:50:44
+ *
+ */
 public class DataObjectAnomalyInfo {
 
 		private String uid;
 		private String buyer_nick;
-		private String anomalyid;
+		private String anomalyid;   //一键求助单id
 		private String workcard_id;
 		private String question_type;
 		private String status;
