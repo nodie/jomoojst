@@ -1,4 +1,4 @@
-package com.jomoo.jst;
+package com.jomoo.jst.DataObject;
 
 
 public class OrderInfo {

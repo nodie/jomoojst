@@ -1,6 +1,8 @@
 package com.jomoo.jst;
 
 import com.google.gson.Gson;
+import com.jomoo.jst.DataObject.AnomalyInfo;
+import com.jomoo.jst.DataObject.StatusUpdate;
 import org.joda.time.DateTime;
 import sun.misc.BASE64Encoder;
 
@@ -48,25 +50,68 @@ public class SendPost {
     private static String AccessKeyId = "TOPTOSBCP";
 
     public static void main(String argv[]) {
+
+        f2();
+//        f3();
+    }
+
+    private static void f1() {
         String SignatureNonce = UUID.randomUUID().toString();
         String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
+
         String Topic = "tmall_fuwu_WorkcardInfo";
         String JsonStr = "{\"result\":{\"receiveTimeNumber\":1540449464000,\"parentBizOrderId\":231395783928043278,\"sellerNick\":\"三星智能锁旗舰店\",\"buyerMail\":\"1368299287@qq.com\",\"auctionId\":556821142815,\"buyerLocation\":500103003,\"actualTotalFee\":22000,\"payTimeNumber\":1540396724000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"锁具\\\",\\\"类目\\\":\\\"电子门锁\\\"}\",\"serviceOrderId\":231395783930043278,\"auctionPrice\":318000,\"category\":\"50021306\",\"shopName\":\"三星智能锁旗舰店\",\"receiveTime\":\"2018-10-25 14:37:44\",\"modelNumber\":\"728\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"电子门锁安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":3363576213,\"excludeTest\":false,\"brand\":\"Samsung/三星\",\"sellerMobile\":\"18918855785\",\"payTime\":\"2018-10-24 23:58:44\",\"auctionName\":\"三星 指纹锁密码锁家用防盗门锁智能电子锁 推拉手机开门 DP728\",\"buyerNick\":\"jiaoweifeng6\",\"tpName\":\"典越电子商务公司\",\"categoryId\":50021306,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18725780178\",\"tpId\":2468433189,\"serviceCode\":\"电子门锁安装\",\"bizOrderId\":231395783929043278,\"reasonId\":0,\"buyerAddress\":\"重庆 重庆 渝中 解放碑 民权路88号R2栋45-9号\",\"solution\":0,\"id\":78407065,\"orderRelationId\":-1,\"name\":\"电子门锁安装\",\"acceptType\":0,\"buyerId\":850047832,\"buyerName\":\"焦渭峰\",\"buyerZipCode\":\"000000\",\"attributes\":{\"itemSkuProperty\":\"饰面颜色:728香槟金内开+【无忧安装】\",\"lbxNo\":\"LP00114564887525\",\"service_pattern\":\"platform\",\"servPrice\":\"22000\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
-
         SendPost sendPost = new SendPost();
         try {
-            sendPost.setMessage(SignatureNonce, Timestamp, Topic, JsonStr);
+            sendPost.setMessageOrderInfo(SignatureNonce, Timestamp, Topic, JsonStr);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static void f2() {
+        Gson gson = new Gson();
+
+        String SignatureNonce = UUID.randomUUID().toString();
+        String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
+
+        String Topic = "tmall_fuwu_AnomalyRecourse";
+        String JsonStr = "{\"result\":{\"buyer_nick\":\"batiqs\",\"id\":163474,\"question_content\":\"拒绝安装/安装服务未完成\",\"workcard_id\":77010009,\"question_type\":\"075\",\"status\":1,\"service_order_id\":244331136981856056,\"recourse_message_list\":[{\"recourse_text\":\"购买前与客服明确过本地可安装才拍下商品，期间销售方还电话确认过安装地址。商品到达后却告知本地>无法安装，让寄回商品。\",\"image_urls\":[\"//img.alicdn.com/imgextra/i2/6000000004521/O1CN011jGf5A2VM9nhPIk_!!6000000004521-0-miaocare.jpg\",\"//img.alicdn.com/imgextra/i4/6000000007662/O1CN0126TF7oT36UwGEuN_!!6000000007662-0-miaocare.jpg\",\"//img.alicdn.com/imgextra/i2/6000000002009/O1CN011QiAAGzyvsvM9H8_!!6000000002009-0-miaocare.jpg\"],\"submit_time\":\"2018-10-22 22:51:00\"}],\"service_code\":\"电子门锁安装\",\"parent_biz_order_id\":244331136979856056,\"submit_time\":\"2018-10-22 22:51:00\",\"biz_order_id\":244331136980856056},\"anomaly_recourse_id\":163474}";
+        SendPost sendPost = new SendPost();
+        try {
+            AnomalyInfo anomalyInfo = gson.fromJson(JsonStr, AnomalyInfo.class);
+            sendPost.setMessageObj(SignatureNonce, Timestamp, Topic, anomalyInfo);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
 
-    public void setMessage(String SignatureNonce, String Timestamp, String Topic, String JsonStr) throws UnsupportedEncodingException {
+    private static void f3() {
+        Gson gson = new Gson();
+
+        String SignatureNonce = UUID.randomUUID().toString();
+        String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
+
+        String Topic = "tmall_fuwu_WorkcardStatusUpdate";
+        String JsonStr = "{\"workcard_id\":75822130,\"Tp_id\":2468433189,\"status\":16,\"update_date\":\"2018-10-19 09:03:08\",\"type\":1,\"comments\":\"null\"}";
+        SendPost sendPost = new SendPost();
+        try {
+            StatusUpdate statusUpdate = gson.fromJson(JsonStr, StatusUpdate.class);
+            sendPost.setMessageObj(SignatureNonce, Timestamp, Topic, statusUpdate);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void setMessageOrderInfo(String SignatureNonce, String Timestamp, String Topic, String JsonStr) throws UnsupportedEncodingException {
         Gson gson = new Gson();
         String param1 = "AccessSecret=" + AccessSecret + "&AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp;
         String Signature = null;
         try {
-            Signature = getEndcodeString(param1);
+            Signature = md5EndcodeString(param1);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
@@ -75,23 +120,10 @@ public class SendPost {
 
         //String param2 = "AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp + "&Signature=" + Signature + "&Topic=" + Topic + "&JsonStr" + JsonStr;
 
-//        Map<String, String> params = new HashMap<String, String>();
-//        params.put("AccessKeyId", AccessKeyId);
-//        params.put("SignatureNonce", SignatureNonce);
-//        params.put("Timestamp", Timestamp);
-//        params.put("Signature", Signature);
-//        params.put("Topic", Topic);
-//        params.put("JsonStr", URLEncoder.encode(JsonStr, "utf-8"));
-//
-//        sendPostMessage("http://218.5.155.206:8099/", params, "utf-8");
 
         //f1
         DataObjectOrderInfo dataObject = new DataObjectOrderInfo();
         dataObject = dataObject.jsonToDataOrderInfo(JsonStr);
-
-        //f2
-        OrderInfo orderInfo = gson.fromJson(JsonStr, OrderInfo.class);
-
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("AccessKeyId", AccessKeyId);
@@ -109,8 +141,7 @@ public class SendPost {
 
 
         //sendPostMessage("http://218.5.155.206:8099/topevent?topic=" + Topic, params, "utf-8");
-//        sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString, "utf-8");
-//        sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, dataObject, "utf-8");
+        sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString, "utf-8");
 //        sendPostMessage("http://demo.baogongpo.cn/TOP/v1/demo.php", bodyString, "utf-8");
 //        sendPostMessage("http://demo.baogongpo.cn/test/post.php", bodyString, "utf-8");
 
@@ -118,77 +149,40 @@ public class SendPost {
         //doJsonPost("http://demo.baogongpo.cn/test/post.php", bodyString);
     }
 
-
-    /*
-     * params 填写的URL的参数 encode 字节编码
-     */
-    public String sendPostMessage(String strUrl, Map<String, String> params, String encode) {
-
-        URL url = null;
+    public void setMessageObj(String SignatureNonce, String Timestamp, String Topic, Object object) throws UnsupportedEncodingException {
+        Gson gson = new Gson();
+        String param1 = "AccessSecret=" + AccessSecret + "&AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp;
+        String Signature = null;
         try {
-            url = new URL(strUrl);
-        } catch (MalformedURLException e) {
+            Signature = md5EndcodeString(param1);
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+        BASE64Encoder base64en = new BASE64Encoder();
+        Signature = base64en.encode(Signature.getBytes());
 
-        StringBuffer stringBuffer = new StringBuffer("topevent?topic=" + params.get("Topic"));
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("AccessKeyId", AccessKeyId);
+        params.put("SignatureNonce", SignatureNonce);
+        params.put("Timestamp", Timestamp);
+        params.put("Signature", Signature);
+        params.put("Topic", Topic);
+        params.put("JsonStr", object);
 
-        if (params != null && !params.isEmpty()) {
-            for (Map.Entry<String, String> entry : params.entrySet()) {
-                try {
-                    stringBuffer
-                            .append(entry.getKey())
-                            .append("=")
-                            .append(URLEncoder.encode(entry.getValue(), encode))
-                            .append("&");
+        String bodyString = gson.toJson(params);
+        System.out.println(bodyString);
 
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-            }
-            // 删掉最后一个 & 字符
-            stringBuffer.deleteCharAt(stringBuffer.length() - 1);
-            System.out.println("body:" + stringBuffer.toString());
 
-            try {
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url
-                        .openConnection();
-                httpURLConnection.setConnectTimeout(3000);
-                httpURLConnection.setDoInput(true);// 从服务器获取数据
-                httpURLConnection.setDoOutput(true);// 向服务器写入数据
 
-                // 获得上传信息的字节大小及长度
-                byte[] mydata = stringBuffer.toString().getBytes();
-                // 设置请求体的类型
-                //httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                httpURLConnection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-                httpURLConnection.setRequestProperty("Content-Lenth", String.valueOf(mydata.length));
+        //sendPostMessage("http://218.5.155.206:8099/topevent?topic=" + Topic, params, "utf-8");
+        sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString, "utf-8");
+//        sendPostMessage("http://demo.baogongpo.cn/TOP/v1/demo.php", bodyString, "utf-8");
+//        sendPostMessage("http://demo.baogongpo.cn/test/post.php", bodyString, "utf-8");
 
-                // 获得输出流，向服务器输出数据
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(mydata);
-
-                // 获得服务器响应的结果和状态码
-                int responseCode = httpURLConnection.getResponseCode();
-                System.out.println(responseCode);
-                if (responseCode == 200) {
-                    // 获得输入流，从服务器端获得数据
-                    InputStream inputStream = (InputStream) httpURLConnection
-                            .getInputStream();
-                    System.out.println(changeInputStream(inputStream, encode));
-                        return (changeInputStream(inputStream, encode));
-                }
-
-                httpURLConnection.disconnect();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-        return "";
+        //doJsonPost("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString);
+        //doJsonPost("http://demo.baogongpo.cn/test/post.php", bodyString);
     }
+
 
     public String sendPostMessage(String strUrl, String paramString, String encode) {
 
@@ -277,7 +271,7 @@ public class SendPost {
      * @param str
      * @return
      */
-    public static String getEndcodeString(String str) throws NoSuchAlgorithmException {
+    public static String md5EndcodeString(String str) throws NoSuchAlgorithmException {
         // 生成一个MD5加密计算摘要
         MessageDigest md = MessageDigest.getInstance("MD5");
         // 计算md5函数
@@ -287,52 +281,5 @@ public class SendPost {
         return new BigInteger(1, md.digest()).toString(16);
     }
 
-    public String doJsonPost(String urlPath, String Json) {
-        String result = "";
-        BufferedReader reader = null;
-        try {
-            URL url = new URL(urlPath);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("POST");
-            conn.setDoOutput(true);
-            conn.setDoInput(true);
-            conn.setUseCaches(false);
-            conn.setRequestProperty("Connection", "Keep-Alive");
-            conn.setRequestProperty("Charset", "UTF-8");
-            // 设置文件类型:
-            conn.setRequestProperty("Content-Type","application/json; charset=UTF-8");
-            // 设置接收类型否则返回415错误
-            //conn.setRequestProperty("accept","*/*")此处为暴力方法设置接受所有类型，以此来防范返回415;
-            conn.setRequestProperty("accept","application/json");
-            // 往服务器里面发送数据
-            if (Json != null) {
-                byte[] writebytes = Json.getBytes();
-                // 设置文件长度
-                conn.setRequestProperty("Content-Length", String.valueOf(writebytes.length));
-                OutputStream outwritestream = conn.getOutputStream();
-                outwritestream.write(Json.getBytes());
-                outwritestream.flush();
-                outwritestream.close();
-            }
-            System.out.println(conn.getResponseCode());
-            if (conn.getResponseCode() == 200) {
-                reader = new BufferedReader(
-                        new InputStreamReader(conn.getInputStream()));
-                result = reader.readLine();
-                System.out.println(result);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return result;
-    }
 
 }
