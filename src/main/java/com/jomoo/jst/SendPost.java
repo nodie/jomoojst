@@ -2,6 +2,7 @@ package com.jomoo.jst;
 
 import com.google.gson.Gson;
 import com.jomoo.jst.DataObject.AnomalyInfo;
+import com.jomoo.jst.DataObject.OrderInfo;
 import com.jomoo.jst.DataObject.StatusUpdate;
 import org.joda.time.DateTime;
 import sun.misc.BASE64Encoder;
@@ -51,26 +52,30 @@ public class SendPost {
 
     public static void main(String argv[]) {
 
-        f2();
-//        f3();
+        WorkcardInfo();
+//        AnomalyRecourse();
+//        WorkcardStatusUpdate();
     }
 
-    private static void f1() {
+    private static void WorkcardInfo() {
+        Gson gson = new Gson();
+
         String SignatureNonce = UUID.randomUUID().toString();
         String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
 
         String Topic = "tmall_fuwu_WorkcardInfo";
-        String JsonStr = "{\"result\":{\"receiveTimeNumber\":1540449464000,\"parentBizOrderId\":231395783928043278,\"sellerNick\":\"三星智能锁旗舰店\",\"buyerMail\":\"1368299287@qq.com\",\"auctionId\":556821142815,\"buyerLocation\":500103003,\"actualTotalFee\":22000,\"payTimeNumber\":1540396724000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"锁具\\\",\\\"类目\\\":\\\"电子门锁\\\"}\",\"serviceOrderId\":231395783930043278,\"auctionPrice\":318000,\"category\":\"50021306\",\"shopName\":\"三星智能锁旗舰店\",\"receiveTime\":\"2018-10-25 14:37:44\",\"modelNumber\":\"728\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"电子门锁安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":3363576213,\"excludeTest\":false,\"brand\":\"Samsung/三星\",\"sellerMobile\":\"18918855785\",\"payTime\":\"2018-10-24 23:58:44\",\"auctionName\":\"三星 指纹锁密码锁家用防盗门锁智能电子锁 推拉手机开门 DP728\",\"buyerNick\":\"jiaoweifeng6\",\"tpName\":\"典越电子商务公司\",\"categoryId\":50021306,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18725780178\",\"tpId\":2468433189,\"serviceCode\":\"电子门锁安装\",\"bizOrderId\":231395783929043278,\"reasonId\":0,\"buyerAddress\":\"重庆 重庆 渝中 解放碑 民权路88号R2栋45-9号\",\"solution\":0,\"id\":78407065,\"orderRelationId\":-1,\"name\":\"电子门锁安装\",\"acceptType\":0,\"buyerId\":850047832,\"buyerName\":\"焦渭峰\",\"buyerZipCode\":\"000000\",\"attributes\":{\"itemSkuProperty\":\"饰面颜色:728香槟金内开+【无忧安装】\",\"lbxNo\":\"LP00114564887525\",\"service_pattern\":\"platform\",\"servPrice\":\"22000\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
+        String JsonStr = "{\"result\":{\"receiveTimeNumber\":1542629200000,\"parentBizOrderId\":250752076685604100,\"sellerNick\":\"b商家测试帐号200\",\"buyerMail\":\"b2c-test785@service.aliyun.com\",\"auctionId\":571994794751,\"buyerLocation\":350203010,\"actualTotalFee\":5500,\"payTimeNumber\":1542628847000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"坐便器盖板\\\",\\\"类目\\\":\\\"智能坐便盖板\\\"}\",\"serviceOrderId\":250752076688604100,\"auctionPrice\":1,\"category\":\"50020034\",\"shopName\":\"b商家测试帐号200\",\"receiveTime\":\"2018-11-19 20:06:40\",\"modelNumber\":\"曼薇测试\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"卫浴小件安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":3692189295,\"excludeTest\":false,\"brand\":\"天猫测试品牌11\",\"sellerMobile\":\"\",\"payTime\":\"2018-11-19 20:00:47\",\"auctionName\":\"曼薇测试请不要拍下\",\"buyerNick\":\"c测试账号785\",\"tpName\":\"九牧厨卫官方旗舰店:店铺负责\",\"categoryId\":50020034,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18350243375\",\"tpId\":2191428291,\"serviceCode\":\"卫浴小件安装\",\"bizOrderId\":250752076686604100,\"reasonId\":0,\"buyerAddress\":\"福建 厦门 思明 莲前 福建省 厦门市 思明区 莲前街道前埔路506-508号国金广场B栋10楼\",\"solution\":0,\"id\":87195554,\"orderRelationId\":-1,\"name\":\"卫浴小件安装\",\"acceptType\":0,\"buyerId\":2201600041,\"buyerName\":\"肖先生\",\"buyerZipCode\":\"222222\",\"attributes\":{\"itemSkuProperty\":\"颜色分类:军绿色\",\"lbxNo\":\"LP00114815679612\",\"service_pattern\":\"platform\",\"servPrice\":\"5500\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
         SendPost sendPost = new SendPost();
         try {
-            sendPost.setMessageOrderInfo(SignatureNonce, Timestamp, Topic, JsonStr);
+            OrderInfo orderInfo = gson.fromJson(JsonStr, OrderInfo.class);
+            sendPost.setMessageObj(SignatureNonce, Timestamp, Topic, orderInfo);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
     }
 
-    private static void f2() {
+    private static void AnomalyRecourse() {
         Gson gson = new Gson();
 
         String SignatureNonce = UUID.randomUUID().toString();
@@ -87,7 +92,7 @@ public class SendPost {
         }
     }
 
-    private static void f3() {
+    private static void WorkcardStatusUpdate() {
         Gson gson = new Gson();
 
         String SignatureNonce = UUID.randomUUID().toString();
@@ -121,7 +126,7 @@ public class SendPost {
         //String param2 = "AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp + "&Signature=" + Signature + "&Topic=" + Topic + "&JsonStr" + JsonStr;
 
 
-        //f1
+        //WorkcardInfo
         DataObjectOrderInfo dataObject = new DataObjectOrderInfo();
         dataObject = dataObject.jsonToDataOrderInfo(JsonStr);
 

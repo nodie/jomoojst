@@ -471,36 +471,93 @@ public class DataObjectOrderInfo {
 
         JSONObject resultJsonObject = JSONObject.fromObject(JSONObject.fromObject(jsonString).getString("result"));
 
-
-        dataObject.setReceiveTime(resultJsonObject.getString("receiveTimeNumber"));
-        dataObject.setParentBizOrderId(resultJsonObject.getString("parentBizOrderId"));
-        dataObject.setBuyerMail(resultJsonObject.getString("buyerMail"));
-        dataObject.setSellerNick(resultJsonObject.getString("sellerNick"));
-        dataObject.setAuctionId(resultJsonObject.getString("auctionId"));
-        dataObject.setBuyerLocation(resultJsonObject.getString("buyerLocation"));
-        dataObject.setActualTotalFee(resultJsonObject.getString("actualTotalFee"));
-        dataObject.setNeedReturnGoods(resultJsonObject.getString("needReturnGoods"));
-        dataObject.setAuctionSkuProperties(resultJsonObject.getString("auctionSkuProperties"));
-        dataObject.setServiceOrderId(resultJsonObject.getString("serviceOrderId"));
-        dataObject.setAuctionPrice(resultJsonObject.getString("auctionPrice"));
-        dataObject.setCategory(resultJsonObject.getString("category"));
-        dataObject.setShopName(resultJsonObject.getString("shopName"));
-        dataObject.setReceiveTime(resultJsonObject.getString("receiveTime"));
-        dataObject.setModelNumber(resultJsonObject.getString("modelNumber"));
-        dataObject.setTaskType(resultJsonObject.getString("taskType"));
-        dataObject.setServiceCount(resultJsonObject.getString("serviceCount"));
-        dataObject.setXiaoerIntervention(resultJsonObject.getString("xiaoerIntervention"));
-        dataObject.setServiceName(resultJsonObject.getString("serviceName"));
-        dataObject.setSellerPunish(resultJsonObject.getString("sellerPunish"));
-        dataObject.setTaskStatus(resultJsonObject.getString("taskStatus"));
-        dataObject.setSellerId(resultJsonObject.getString("sellerId"));
-        dataObject.setBrand(resultJsonObject.getString("brand"));
-        dataObject.setSellerMobile(resultJsonObject.getString("sellerMobile"));
-        dataObject.setAuctionName(resultJsonObject.getString("auctionName"));
-        dataObject.setBuyerNick(resultJsonObject.getString("buyerNick"));
-        dataObject.setTpName(resultJsonObject.getString("tpName"));
-        dataObject.setCategoryId(resultJsonObject.getString("categoryId"));
-        dataObject.setTaskMemo(resultJsonObject.getString("taskMemo"));
+        if (resultJsonObject.containsKey("receiveTimeNumber")) {
+            dataObject.setReceiveTime(resultJsonObject.getString("receiveTimeNumber"));
+        }
+        if (resultJsonObject.containsKey("parentBizOrderId")) {
+            dataObject.setParentBizOrderId(resultJsonObject.getString("parentBizOrderId"));
+        }
+        if (resultJsonObject.containsKey("buyerMail")) {
+            dataObject.setBuyerMail(resultJsonObject.getString("buyerMail"));
+        }
+        if (resultJsonObject.containsKey("sellerNick")) {
+            dataObject.setSellerNick(resultJsonObject.getString("sellerNick"));
+        }
+        if (resultJsonObject.containsKey("auctionId")) {
+            dataObject.setAuctionId(resultJsonObject.getString("auctionId"));
+        }
+        if (resultJsonObject.containsKey("buyerLocation")) {
+            dataObject.setBuyerLocation(resultJsonObject.getString("buyerLocation"));
+        }
+        if (resultJsonObject.containsKey("actualTotalFee")) {
+            dataObject.setActualTotalFee(resultJsonObject.getString("actualTotalFee"));
+        }
+        if (resultJsonObject.containsKey("needReturnGoods")) {
+            dataObject.setNeedReturnGoods(resultJsonObject.getString("needReturnGoods"));
+        }
+        if (resultJsonObject.containsKey("auctionSkuProperties")) {
+            dataObject.setAuctionSkuProperties(resultJsonObject.getString("auctionSkuProperties"));
+        }
+        if (resultJsonObject.containsKey("serviceOrderId")) {
+            dataObject.setServiceOrderId(resultJsonObject.getString("serviceOrderId"));
+        }
+        if (resultJsonObject.containsKey("auctionPrice")) {
+            dataObject.setAuctionPrice(resultJsonObject.getString("auctionPrice"));
+        }
+        if (resultJsonObject.containsKey("category")) {
+            dataObject.setCategory(resultJsonObject.getString("category"));
+        }
+        if (resultJsonObject.containsKey("shopName")) {
+            dataObject.setShopName(resultJsonObject.getString("shopName"));
+        }
+        if (resultJsonObject.containsKey("receiveTime")) {
+            dataObject.setReceiveTime(resultJsonObject.getString("receiveTime"));
+        }
+        if (resultJsonObject.containsKey("modelNumber")) {
+            dataObject.setModelNumber(resultJsonObject.getString("modelNumber"));
+        }
+        if (resultJsonObject.containsKey("taskType")) {
+            dataObject.setTaskType(resultJsonObject.getString("taskType"));
+        }
+        if (resultJsonObject.containsKey("serviceCount")) {
+            dataObject.setServiceCount(resultJsonObject.getString("serviceCount"));
+        }
+        if (resultJsonObject.containsKey("xiaoerIntervention")) {
+            dataObject.setXiaoerIntervention(resultJsonObject.getString("xiaoerIntervention"));
+        }
+        if (resultJsonObject.containsKey("serviceName")) {
+            dataObject.setServiceName(resultJsonObject.getString("serviceName"));
+        }
+        if (resultJsonObject.containsKey("sellerPunish")) {
+            dataObject.setSellerPunish(resultJsonObject.getString("sellerPunish"));
+        }
+        if (resultJsonObject.containsKey("taskStatus")) {
+            dataObject.setTaskStatus(resultJsonObject.getString("taskStatus"));
+        }
+        if (resultJsonObject.containsKey("sellerId")) {
+            dataObject.setSellerId(resultJsonObject.getString("sellerId"));
+        }
+        if (resultJsonObject.containsKey("brand")) {
+            dataObject.setBrand(resultJsonObject.getString("brand"));
+        }
+        if (resultJsonObject.containsKey("sellerMobile")) {
+            dataObject.setSellerMobile(resultJsonObject.getString("sellerMobile"));
+        }
+        if (resultJsonObject.containsKey("auctionName")) {
+            dataObject.setAuctionName(resultJsonObject.getString("auctionName"));
+        }
+        if (resultJsonObject.containsKey("buyerNick")) {
+            dataObject.setBuyerNick(resultJsonObject.getString("buyerNick"));
+        }
+        if (resultJsonObject.containsKey("tpName")) {
+            dataObject.setTpName(resultJsonObject.getString("tpName"));
+        }
+        if (resultJsonObject.containsKey("categoryId")) {
+            dataObject.setCategoryId(resultJsonObject.getString("categoryId"));
+        }
+        if (resultJsonObject.containsKey("taskMemo")) {
+            dataObject.setTaskMemo(resultJsonObject.getString("taskMemo"));
+        }
         if (resultJsonObject.containsKey("buyerMobile")) {
             //如果有移动电话，就填入移动电话
             //如果没有移动电话，就找座机填入
@@ -511,21 +568,51 @@ public class DataObjectOrderInfo {
                 dataObject.setBuyerMobile(resultJsonObject.getString("buyerPhone"));
             }
         }
-        dataObject.setTpId(resultJsonObject.getString("tpId"));
-        dataObject.setServiceCode(resultJsonObject.getString("serviceCode"));
-        dataObject.setBizOrderId(resultJsonObject.getString("bizOrderId"));
-        dataObject.setReasonId(resultJsonObject.getString("reasonId"));
-        dataObject.setBuyerAddress(resultJsonObject.getString("buyerAddress"));
-        dataObject.setSolution(resultJsonObject.getString("solution"));
-        dataObject.setTb_id(resultJsonObject.getString("id"));//id = tb_id
-        dataObject.setName(resultJsonObject.getString("name"));
-        dataObject.setOrderRelationId(resultJsonObject.getString("orderRelationId"));
-        dataObject.setAcceptType(resultJsonObject.getString("acceptType"));
-        dataObject.setBuyerId(resultJsonObject.getString("buyerId"));
-        dataObject.setBuyerName(resultJsonObject.getString("buyerName"));
-        dataObject.setBuyerZipCode(resultJsonObject.getString("buyerZipCode"));
-        dataObject.setAttributes(resultJsonObject.getString("attributes"));
-        dataObject.setBuyAmount(resultJsonObject.getString("buyAmount"));
+        if (resultJsonObject.containsKey("tpId")) {
+            dataObject.setTpId(resultJsonObject.getString("tpId"));
+        }
+        if (resultJsonObject.containsKey("serviceCode")) {
+            dataObject.setServiceCode(resultJsonObject.getString("serviceCode"));
+        }
+        if (resultJsonObject.containsKey("bizOrderId")) {
+            dataObject.setBizOrderId(resultJsonObject.getString("bizOrderId"));
+        }
+        if (resultJsonObject.containsKey("reasonId")) {
+            dataObject.setReasonId(resultJsonObject.getString("reasonId"));
+        }
+        if (resultJsonObject.containsKey("buyerAddress")) {
+            dataObject.setBuyerAddress(resultJsonObject.getString("buyerAddress"));
+        }
+        if (resultJsonObject.containsKey("solution")) {
+            dataObject.setSolution(resultJsonObject.getString("solution"));
+        }
+        if (resultJsonObject.containsKey("id")) {
+            dataObject.setTb_id(resultJsonObject.getString("id"));//id = tb_id
+        }
+        if (resultJsonObject.containsKey("name")) {
+            dataObject.setName(resultJsonObject.getString("name"));
+        }
+        if (resultJsonObject.containsKey("orderRelationId")) {
+            dataObject.setOrderRelationId(resultJsonObject.getString("orderRelationId"));
+        }
+        if (resultJsonObject.containsKey("acceptType")) {
+            dataObject.setAcceptType(resultJsonObject.getString("acceptType"));
+        }
+        if (resultJsonObject.containsKey("buyerId")) {
+            dataObject.setBuyerId(resultJsonObject.getString("buyerId"));
+        }
+        if (resultJsonObject.containsKey("buyerName")) {
+            dataObject.setBuyerName(resultJsonObject.getString("buyerName"));
+        }
+        if (resultJsonObject.containsKey("buyerZipCode")) {
+            dataObject.setBuyerZipCode(resultJsonObject.getString("buyerZipCode"));
+        }
+        if (resultJsonObject.containsKey("attributes")) {
+            dataObject.setAttributes(resultJsonObject.getString("attributes"));
+        }
+        if (resultJsonObject.containsKey("buyAmount")) {
+            dataObject.setBuyAmount(resultJsonObject.getString("buyAmount"));
+        }
 
 
         String attributes = dataObject.getAttributes();
@@ -537,9 +624,15 @@ public class DataObjectOrderInfo {
             dataObject.setItemSkuProperty("");
         }
 
-        dataObject.setLbxNo(attributesJsonObject.getString("lbxNo"));
-        dataObject.setService_pattern(attributesJsonObject.getString("service_pattern"));
-        dataObject.setServPrice(attributesJsonObject.getString("servPrice"));
+        if (resultJsonObject.containsKey("lbxNo")) {
+            dataObject.setLbxNo(attributesJsonObject.getString("lbxNo"));
+        }
+        if (resultJsonObject.containsKey("service_pattern")) {
+            dataObject.setService_pattern(attributesJsonObject.getString("service_pattern"));
+        }
+        if (resultJsonObject.containsKey("servPrice")) {
+            dataObject.setServPrice(attributesJsonObject.getString("servPrice"));
+        }
 
 
         return dataObject;

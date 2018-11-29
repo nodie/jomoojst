@@ -112,7 +112,7 @@ public class OrderInfo {
         private int orderRelationId;
         private String name;
         private int acceptType;
-        private int buyerId;
+        private String buyerId;
         private String buyerName;
         private String buyerZipCode;
         private AttributesBean attributes;
@@ -462,11 +462,11 @@ public class OrderInfo {
             this.acceptType = acceptType;
         }
 
-        public int getBuyerId() {
+        public String getBuyerId() {
             return buyerId;
         }
 
-        public void setBuyerId(int buyerId) {
+        public void setBuyerId(String buyerId) {
             this.buyerId = buyerId;
         }
 

@@ -23,6 +23,7 @@ class ApiObject {
 
 public class JomooJst {
     static String WS_STRING = "ws://mc.api.taobao.com";
+    static final String LOGFILE_STRING = "logs/jomoo-jst-logs.txt";
 
     // static String WS_STRING = "ws://mc.api.tbsandbox.com/";
     public static void main(String[] args) throws Throwable {
