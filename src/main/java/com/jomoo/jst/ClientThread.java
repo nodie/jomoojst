@@ -59,18 +59,18 @@ public class ClientThread extends Thread {
                 public void onMessage(Message message, MessageStatus status) {
                     try {
 
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "UID_INTEGER="+ uid + " APPKEY_STRING="+ appkeyString + " SECRET_STRING=" + secretString);
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "\n--------------------------------------------------------\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "NICK: " + nickString + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getId: " + message.getId() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getTopic: " + message.getTopic() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getContent: " + message.getContent() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getPubAppKey: " + message.getPubAppKey() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getUserNick: " + message.getUserNick() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getOutgoingTime: " + message.getOutgoingTime() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getPubTime: " + message.getPubTime() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "getUserId: " + message.getUserId() + "\n");
-                        Tools.writeLogs(JomooJst.LOGFILE_STRING, "\n========================================================\n\n\n\n\n");
+                        Tools.writeLogs("UID_INTEGER="+ uid + " APPKEY_STRING="+ appkeyString + " SECRET_STRING=" + secretString);
+                        Tools.writeLogs("\n--------------------------------------------------------\n");
+                        Tools.writeLogs("NICK: " + nickString + "\n");
+                        Tools.writeLogs("getId: " + message.getId() + "\n");
+                        Tools.writeLogs("getTopic: " + message.getTopic() + "\n");
+                        Tools.writeLogs("getContent: " + message.getContent() + "\n");
+                        Tools.writeLogs("getPubAppKey: " + message.getPubAppKey() + "\n");
+                        Tools.writeLogs("getUserNick: " + message.getUserNick() + "\n");
+                        Tools.writeLogs("getOutgoingTime: " + message.getOutgoingTime() + "\n");
+                        Tools.writeLogs("getPubTime: " + message.getPubTime() + "\n");
+                        Tools.writeLogs("getUserId: " + message.getUserId() + "\n");
+                        Tools.writeLogs("\n========================================================\n\n\n\n\n");
 
 
                         /**
