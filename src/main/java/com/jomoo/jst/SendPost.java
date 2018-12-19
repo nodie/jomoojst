@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.jomoo.jst.DataObject.AnomalyInfo;
 import com.jomoo.jst.DataObject.OrderInfo;
 import com.jomoo.jst.DataObject.StatusUpdate;
+import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import sun.misc.BASE64Encoder;
 
@@ -49,7 +50,7 @@ $Signature = base64_encode( md5 ( $orgSign ) );
 public class SendPost {
     private static String AccessSecret = "f379da9b9dc74ae3";
     private static String AccessKeyId = "TOPTOSBCP";
-
+    private static Logger logger = Logger.getLogger(SendPost.class);
     public static void main(String argv[]) {
 
         WorkcardInfo();
@@ -200,6 +201,7 @@ public class SendPost {
 
         if (paramString != null) {
             try {
+                logger.debug("发送的数据》》》"+paramString);  //写入发送数据到日志
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url
                         .openConnection();
                 httpURLConnection.setConnectTimeout(3000);
@@ -226,6 +228,7 @@ public class SendPost {
                     InputStream inputStream = (InputStream) httpURLConnection
                             .getInputStream();
                     System.out.println(changeInputStream(inputStream, encode));
+                    logger.debug("接收的数据》》》"+changeInputStream(inputStream, encode));//写入返回数据到日志
                     return (changeInputStream(inputStream, encode));
                 }
 
