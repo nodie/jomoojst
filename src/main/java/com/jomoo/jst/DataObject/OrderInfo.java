@@ -516,6 +516,7 @@ public class OrderInfo {
             private String service_pattern;
             private String servPrice;
             private String servSkuName;
+            private String outerIdSKU;
 
             public String getItemSkuProperty() {
                 return itemSkuProperty;
@@ -555,6 +556,14 @@ public class OrderInfo {
 
             public void setServSkuName(String servSkuName) {
                 this.servSkuName = servSkuName;
+            }
+
+            public String getOuterIdSKU() {
+                return outerIdSKU;
+            }
+
+            public void setOuterIdSKU(String outerIdSKU) {
+                this.outerIdSKU = outerIdSKU;
             }
         }
     }
