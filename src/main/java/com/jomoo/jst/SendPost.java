@@ -204,7 +204,7 @@ public class SendPost {
 
         if (paramString != null) {
             try {
-                logger.debug("发送的数据》》》"+paramString);  //写入发送数据到日志
+                logger.debug("SendMessages --> "+paramString);  //写入发送数据到日志
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url
                         .openConnection();
                 httpURLConnection.setConnectTimeout(3000);
@@ -231,7 +231,7 @@ public class SendPost {
                     InputStream inputStream = (InputStream) httpURLConnection
                             .getInputStream();
                      String result =   changeInputStream(inputStream, encode);
-                    logger.debug("接收的数据》》" + result);//写入返回数据到日志
+                    logger.debug("ReceiveMessages --> " + result);//写入返回数据到日志
                     return result;
                 }
 
