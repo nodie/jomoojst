@@ -4,7 +4,7 @@ package com.jomoo.jst.DataObject;
 public class OrderInfo {
 
     /**
-     * result : {"receiveTimeNumber":1540449464000,"parentBizOrderId":231395783928043278,"sellerNick":"三星智能锁旗舰店","buyerMail":"1368299287@qq.com","auctionId":556821142815,"buyerLocation":500103003,"actualTotalFee":22000,"payTimeNumber":1540396724000,"needReturnGoods":0,"auctionSkuProperties":"{\"@type\":\"java.util.HashMap\",\"父类目\":\"锁具\",\"类目\":\"电子门锁\"}","serviceOrderId":231395783930043278,"auctionPrice":318000,"category":"50021306","shopName":"三星智能锁旗舰店","receiveTime":"2018-10-25 14:37:44","modelNumber":"728","taskType":0,"serviceCount":1,"xiaoerIntervention":false,"serviceName":"电子门锁安装","sellerPunish":false,"taskStatus":1,"sellerId":3363576213,"excludeTest":false,"brand":"Samsung/三星","sellerMobile":"18918855785","payTime":"2018-10-24 23:58:44","auctionName":"三星 指纹锁密码锁家用防盗门锁智能电子锁 推拉手机开门 DP728","buyerNick":"jiaoweifeng6","tpName":"典越电子商务公司","categoryId":50021306,"taskMemo":"上门安装","buyerMobile":"18725780178","tpId":2468433189,"serviceCode":"电子门锁安装","bizOrderId":231395783929043278,"reasonId":0,"buyerAddress":"重庆 重庆 渝中 解放碑 民权路88号R2栋45-9号","solution":0,"id":78407065,"orderRelationId":-1,"name":"电子门锁安装","acceptType":0,"buyerId":850047832,"buyerName":"焦渭峰","buyerZipCode":"000000","attributes":{"itemSkuProperty":"饰面颜色:728香槟金内开+【无忧安装】","lbxNo":"LP00114564887525","service_pattern":"platform","servPrice":"22000","servSkuName":""},"buyAmount":1}
+     * result : {"receiveTimeNumber":1545960694000,"parentBizOrderId":308122720937810418,"sellerNick":"九牧厨卫官方旗舰店","buyerMail":"","auctionId":557599557361,"buyerLocation":451202001,"actualTotalFee":12000,"payTimeNumber":1545911959000,"needReturnGoods":0,"auctionSkuProperties":"{\"@type\":\"java.util.HashMap\",\"父类目\":\"卫浴家具\",\"长度(cm)\":\"60\",\"类目\":\"浴室柜组合\"}","sellerPhone":"0592-4001919999","serviceOrderId":308122720939810418,"auctionPrice":220900,"category":"50020072","shopName":"九牧厨卫官方旗舰店","receiveTime":"2018-12-28 09:31:34","taskType":0,"serviceCount":1,"xiaoerIntervention":false,"serviceName":"卫浴大件安装","sellerPunish":false,"taskStatus":1,"sellerId":2191428291,"excludeTest":false,"brand":"JOMOO/九牧","sellerMobile":"18859969566","payTime":"2018-12-27 19:59:19","auctionName":"jomoo九牧浴室柜组合 PVC悬挂式洗脸洗手面盆池洗漱台盆卫生间","buyerNick":"小小小小上33305087","tpName":"九牧厨卫官方旗舰店:店铺负责","categoryId":50020072,"taskMemo":"上门安装","buyerMobile":"17776585727","tpId":2191428291,"serviceCode":"卫浴大件安装","bizOrderId":308122720938810418,"reasonId":0,"buyerAddress":"广西壮族自治区 河池市 金城江区 金城江街道 金城江街道区法院斜对面宏杰汽车修理厂","solution":0,"id":94451042,"orderRelationId":-1,"name":"卫浴大件安装","acceptType":0,"buyerId":2650811804,"buyerName":"覃绍上","buyerZipCode":"547000","attributes":{"settlement":"true","itemSkuProperty":"颜色分类:PVC板60cm带侧柜（不含龙头,还需另购）","outerIdSKU":"6957210287940","lbxNo":"LP00118773842722","service_pattern":"platform","servPrice":"12000","servSkuName":""},"buyAmount":1}
      */
 
     private ResultBean result;
@@ -19,53 +19,53 @@ public class OrderInfo {
 
     public static class ResultBean {
         /**
-         * receiveTimeNumber : 1540449464000
-         * parentBizOrderId : 231395783928043278
-         * sellerNick : 三星智能锁旗舰店
-         * buyerMail : 1368299287@qq.com
-         * auctionId : 556821142815
-         * buyerLocation : 500103003
-         * actualTotalFee : 22000
-         * payTimeNumber : 1540396724000
+         * receiveTimeNumber : 1545960694000
+         * parentBizOrderId : 308122720937810418
+         * sellerNick : 九牧厨卫官方旗舰店
+         * buyerMail :
+         * auctionId : 557599557361
+         * buyerLocation : 451202001
+         * actualTotalFee : 12000
+         * payTimeNumber : 1545911959000
          * needReturnGoods : 0
-         * auctionSkuProperties : {"@type":"java.util.HashMap","父类目":"锁具","类目":"电子门锁"}
-         * serviceOrderId : 231395783930043278
-         * auctionPrice : 318000
-         * category : 50021306
-         * shopName : 三星智能锁旗舰店
-         * receiveTime : 2018-10-25 14:37:44
-         * modelNumber : 728
+         * auctionSkuProperties : {"@type":"java.util.HashMap","父类目":"卫浴家具","长度(cm)":"60","类目":"浴室柜组合"}
+         * sellerPhone : 0592-4001919999
+         * serviceOrderId : 308122720939810418
+         * auctionPrice : 220900
+         * category : 50020072
+         * shopName : 九牧厨卫官方旗舰店
+         * receiveTime : 2018-12-28 09:31:34
          * taskType : 0
          * serviceCount : 1
          * xiaoerIntervention : false
-         * serviceName : 电子门锁安装
+         * serviceName : 卫浴大件安装
          * sellerPunish : false
          * taskStatus : 1
-         * sellerId : 3363576213
+         * sellerId : 2191428291
          * excludeTest : false
-         * brand : Samsung/三星
-         * sellerMobile : 18918855785
-         * payTime : 2018-10-24 23:58:44
-         * auctionName : 三星 指纹锁密码锁家用防盗门锁智能电子锁 推拉手机开门 DP728
-         * buyerNick : jiaoweifeng6
-         * tpName : 典越电子商务公司
-         * categoryId : 50021306
+         * brand : JOMOO/九牧
+         * sellerMobile : 18859969566
+         * payTime : 2018-12-27 19:59:19
+         * auctionName : jomoo九牧浴室柜组合 PVC悬挂式洗脸洗手面盆池洗漱台盆卫生间
+         * buyerNick : 小小小小上33305087
+         * tpName : 九牧厨卫官方旗舰店:店铺负责
+         * categoryId : 50020072
          * taskMemo : 上门安装
-         * buyerMobile : 18725780178
-         * tpId : 2468433189
-         * serviceCode : 电子门锁安装
-         * bizOrderId : 231395783929043278
+         * buyerMobile : 17776585727
+         * tpId : 2191428291
+         * serviceCode : 卫浴大件安装
+         * bizOrderId : 308122720938810418
          * reasonId : 0
-         * buyerAddress : 重庆 重庆 渝中 解放碑 民权路88号R2栋45-9号
+         * buyerAddress : 广西壮族自治区 河池市 金城江区 金城江街道 金城江街道区法院斜对面宏杰汽车修理厂
          * solution : 0
-         * id : 78407065
+         * id : 94451042
          * orderRelationId : -1
-         * name : 电子门锁安装
+         * name : 卫浴大件安装
          * acceptType : 0
-         * buyerId : 850047832
-         * buyerName : 焦渭峰
-         * buyerZipCode : 000000
-         * attributes : {"itemSkuProperty":"饰面颜色:728香槟金内开+【无忧安装】","lbxNo":"LP00114564887525","service_pattern":"platform","servPrice":"22000","servSkuName":""}
+         * buyerId : 2650811804
+         * buyerName : 覃绍上
+         * buyerZipCode : 547000
+         * attributes : {"settlement":"true","itemSkuProperty":"颜色分类:PVC板60cm带侧柜（不含龙头,还需另购）","outerIdSKU":"6957210287940","lbxNo":"LP00118773842722","service_pattern":"platform","servPrice":"12000","servSkuName":""}
          * buyAmount : 1
          */
 
@@ -79,12 +79,12 @@ public class OrderInfo {
         private long payTimeNumber;
         private int needReturnGoods;
         private String auctionSkuProperties;
+        private String sellerPhone;
         private long serviceOrderId;
         private int auctionPrice;
         private String category;
         private String shopName;
         private String receiveTime;
-        private String modelNumber;
         private int taskType;
         private int serviceCount;
         private boolean xiaoerIntervention;
@@ -112,7 +112,7 @@ public class OrderInfo {
         private int orderRelationId;
         private String name;
         private int acceptType;
-        private String buyerId;
+        private long buyerId;
         private String buyerName;
         private String buyerZipCode;
         private AttributesBean attributes;
@@ -198,6 +198,14 @@ public class OrderInfo {
             this.auctionSkuProperties = auctionSkuProperties;
         }
 
+        public String getSellerPhone() {
+            return sellerPhone;
+        }
+
+        public void setSellerPhone(String sellerPhone) {
+            this.sellerPhone = sellerPhone;
+        }
+
         public long getServiceOrderId() {
             return serviceOrderId;
         }
@@ -236,14 +244,6 @@ public class OrderInfo {
 
         public void setReceiveTime(String receiveTime) {
             this.receiveTime = receiveTime;
-        }
-
-        public String getModelNumber() {
-            return modelNumber;
-        }
-
-        public void setModelNumber(String modelNumber) {
-            this.modelNumber = modelNumber;
         }
 
         public int getTaskType() {
@@ -462,11 +462,11 @@ public class OrderInfo {
             this.acceptType = acceptType;
         }
 
-        public String getBuyerId() {
+        public long getBuyerId() {
             return buyerId;
         }
 
-        public void setBuyerId(String buyerId) {
+        public void setBuyerId(long buyerId) {
             this.buyerId = buyerId;
         }
 
@@ -504,19 +504,30 @@ public class OrderInfo {
 
         public static class AttributesBean {
             /**
-             * itemSkuProperty : 饰面颜色:728香槟金内开+【无忧安装】
-             * lbxNo : LP00114564887525
+             * settlement : true
+             * itemSkuProperty : 颜色分类:PVC板60cm带侧柜（不含龙头,还需另购）
+             * outerIdSKU : 6957210287940
+             * lbxNo : LP00118773842722
              * service_pattern : platform
-             * servPrice : 22000
+             * servPrice : 12000
              * servSkuName :
              */
 
+            private String settlement;
             private String itemSkuProperty;
+            private String outerIdSKU;
             private String lbxNo;
             private String service_pattern;
             private String servPrice;
             private String servSkuName;
-            private String outerIdSKU;
+
+            public String getSettlement() {
+                return settlement;
+            }
+
+            public void setSettlement(String settlement) {
+                this.settlement = settlement;
+            }
 
             public String getItemSkuProperty() {
                 return itemSkuProperty;
@@ -524,6 +535,14 @@ public class OrderInfo {
 
             public void setItemSkuProperty(String itemSkuProperty) {
                 this.itemSkuProperty = itemSkuProperty;
+            }
+
+            public String getOuterIdSKU() {
+                return outerIdSKU;
+            }
+
+            public void setOuterIdSKU(String outerIdSKU) {
+                this.outerIdSKU = outerIdSKU;
             }
 
             public String getLbxNo() {
@@ -556,14 +575,6 @@ public class OrderInfo {
 
             public void setServSkuName(String servSkuName) {
                 this.servSkuName = servSkuName;
-            }
-
-            public String getOuterIdSKU() {
-                return outerIdSKU;
-            }
-
-            public void setOuterIdSKU(String outerIdSKU) {
-                this.outerIdSKU = outerIdSKU;
             }
         }
     }
