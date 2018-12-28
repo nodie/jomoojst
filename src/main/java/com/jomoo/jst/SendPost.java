@@ -66,7 +66,7 @@ public class SendPost {
 
         String Topic = "tmall_fuwu_WorkcardInfo";
    //     String JsonStr = "{\"result\":{\"receiveTimeNumber\":1542629200000,\"parentBizOrderId\":250752076685604100,\"sellerNick\":\"b商家测试帐号200\",\"buyerMail\":\"b2c-test785@service.aliyun.com\",\"auctionId\":571994794751,\"buyerLocation\":350203010,\"actualTotalFee\":5500,\"payTimeNumber\":1542628847000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"坐便器盖板\\\",\\\"类目\\\":\\\"智能坐便盖板\\\"}\",\"serviceOrderId\":250752076688604100,\"auctionPrice\":1,\"category\":\"50020034\",\"shopName\":\"b商家测试帐号200\",\"receiveTime\":\"2018-11-19 20:06:40\",\"modelNumber\":\"曼薇测试\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"卫浴小件安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":3692189295,\"excludeTest\":false,\"brand\":\"天猫测试品牌11\",\"sellerMobile\":\"\",\"payTime\":\"2018-11-19 20:00:47\",\"auctionName\":\"曼薇测试请不要拍下\",\"buyerNick\":\"c测试账号785\",\"tpName\":\"九牧厨卫官方旗舰店:店铺负责\",\"categoryId\":50020034,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18350243375\",\"tpId\":2191428291,\"serviceCode\":\"卫浴小件安装\",\"bizOrderId\":250752076686604100,\"reasonId\":0,\"buyerAddress\":\"福建 厦门 思明 莲前 福建省 厦门市 思明区 莲前街道前埔路506-508号国金广场B栋10楼\",\"solution\":0,\"id\":87195554,\"orderRelationId\":-1,\"name\":\"卫浴小件安装\",\"acceptType\":0,\"buyerId\":2201600041,\"buyerName\":\"肖先生\",\"buyerZipCode\":\"222222\",\"attributes\":{\"itemSkuProperty\":\"颜色分类:军绿色\",\"lbxNo\":\"LP00114815679612\",\"service_pattern\":\"platform\",\"servPrice\":\"5500\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
-        String JsonStr = "{\"result\":{\"receiveTimeNumber\":1545178622000,\"parentBizOrderId\":300644739820547131,\"sellerNick\":\"九牧官方旗舰店\",\"buyerMail\":\"tx0jd@yahoo.cn\",\"auctionId\":45423571839,\"buyerLocation\":440106007,\"actualTotalFee\":9000,\"payTimeNumber\":1545126623000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"晾衣架/晾衣杆\\\",\\\"类目\\\":\\\"伸缩晾衣架\\\"}\",\"sellerPhone\":\"400-4001919999\",\"serviceOrderId\":300644739822547131,\"auctionPrice\":36900,\"category\":\"50020968\",\"shopName\":\"九牧官方旗舰店\",\"receiveTime\":\"2018-12-19 08:17:02\",\"modelNumber\":\"LM202\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"晾衣架安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":667286523,\"excludeTest\":false,\"brand\":\"JOMOO/九牧\",\"sellerMobile\":\"18859969363\",\"payTime\":\"2018-12-18 17:50:23\",\"auctionName\":\"JOMOO九牧卫浴手摇式晾衣杆晾衣架合金材质LM202/LM103\",\"buyerNick\":\"通讯0机地\",\"tpName\":\"九牧厨卫官方旗舰店:店铺负责\",\"categoryId\":50020968,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"15812687757\",\"tpId\":2191428291,\"serviceCode\":\"晾衣架安装\",\"bizOrderId\":300644739821547131,\"reasonId\":0,\"buyerAddress\":\"广东省 广州市 天河区 沙东街道 沙东街道广州大道北52号豪景花园D栋602\",\"solution\":0,\"id\":92349004,\"orderRelationId\":-1,\"name\":\"晾衣架安装\",\"acceptType\":0,\"buyerId\":260543171,\"buyerName\":\"林先生\",\"buyerZipCode\":\"510510\",\"attributes\":{\"itemOuterId\":\"LM\",\"itemSkuProperty\":\"颜色分类:LM103-754\",\"lbxNo\":\"LP00121062131170\",\"service_pattern\":\"platform\",\"servPrice\":\"9000\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
+        String JsonStr = " {\"result\":{\"receiveTimeNumber\":1545196503000,\"parentBizOrderId\":256341063077271494,\"sellerNick\":\"九牧官方旗舰店\",\"buyerMail\":\"\",\"auctionId\":45423571839,\"buyerLocation\":350212001,\"actualTotalFee\":9000,\"payTimeNumber\":1545177930000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"晾衣架/晾衣杆\\\",\\\"类目\\\":\\\"伸缩晾衣架\\\"}\",\"sellerPhone\":\"400-4001919999\",\"serviceOrderId\":256341063079271494,\"auctionPrice\":36900,\"category\":\"50020968\",\"shopName\":\"九牧官方旗舰店\",\"receiveTime\":\"2018-12-19 13:15:03\",\"modelNumber\":\"LM202\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"晾衣架安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":667286523,\"excludeTest\":false,\"brand\":\"JOMOO/九牧\",\"sellerMobile\":\"18859969363\",\"payTime\":\"2018-12-19 08:05:30\",\"auctionName\":\"JOMOO九牧卫浴手摇式晾衣杆晾衣架合金材质LM202/LM103\",\"buyerNick\":\"楚爷小乐\",\"tpName\":\"九牧厨卫官方旗舰店:店铺负责\",\"categoryId\":50020968,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18350277703\",\"tpId\":2191428291,\"serviceCode\":\"晾衣架安装\",\"bizOrderId\":256341063078271494,\"reasonId\":0,\"buyerAddress\":\"福建 厦门 同安 五显 禹州香溪里7地块，4#楼，2605。(欢兔旅行电梯口)\",\"solution\":0,\"id\":92209297,\"orderRelationId\":-1,\"name\":\"晾衣架安装\",\"acceptType\":0,\"buyerId\":2697279414,\"buyerName\":\"乐发楚\",\"buyerZipCode\":\"000000\",\"attributes\":{\"itemOuterId\":\"LM\",\"itemSkuProperty\":\"颜色分类:LM103-754\",\"lbxNo\":\"LP00121104994547\",\"service_pattern\":\"platform\",\"servPrice\":\"9000\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
 
         SendPost sendPost = new SendPost();
         try {
@@ -102,7 +102,7 @@ public class SendPost {
         String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
 
         String Topic = "tmall_fuwu_WorkcardStatusUpdate";
-        String JsonStr = "{\"workcard_id\":75822130,\"Tp_id\":2468433189,\"status\":16,\"update_date\":\"2018-10-19 09:03:08\",\"type\":1,\"comments\":\"null\"}";
+        String JsonStr = "{\"result\":{\"receiveTimeNumber\":1542629011000,\"parentBizOrderId\":250778221558604100,\"sellerNick\":\"b商家测试帐号200\",\"buyerMail\":\"b2c-test785@service.aliyun.com\",\"auctionId\":571994794751,\"buyerLocation\":350203010,\"actualTotalFee\":5500,\"payTimeNumber\":1542628761000,\"needReturnGoods\":0,\"auctionSkuProperties\":\"{\\\"@type\\\":\\\"java.util.HashMap\\\",\\\"父类目\\\":\\\"坐便器盖板\\\",\\\"类目\\\":\\\"智能坐便盖板\\\"}\",\"serviceOrderId\":250778221561604100,\"auctionPrice\":1,\"category\":\"50020034\",\"shopName\":\"b商家测试帐号200\",\"receiveTime\":\"2018-11-19 20:03:31\",\"modelNumber\":\"曼薇测试\",\"taskType\":0,\"serviceCount\":1,\"xiaoerIntervention\":false,\"serviceName\":\"卫浴小件安装\",\"sellerPunish\":false,\"taskStatus\":1,\"sellerId\":3692189295,\"excludeTest\":false,\"brand\":\"天猫测试品牌11\",\"sellerMobile\":\"\",\"payTime\":\"2018-11-19 19:59:21\",\"auctionName\":\"曼薇测试请不要拍下\",\"buyerNick\":\"c测试账号785\",\"tpName\":\"九牧厨卫官方旗舰店:店铺负责\",\"categoryId\":50020034,\"taskMemo\":\"上门安装\",\"buyerMobile\":\"18350243375\",\"tpId\":2191428291,\"serviceCode\":\"卫浴小件安装\",\"bizOrderId\":250778221559604100,\"reasonId\":0,\"buyerAddress\":\"福建 厦门 思明 莲前 福建省 厦门市 思明区 莲前街道前埔路506-508号国金广场B栋10楼\",\"solution\":0,\"id\":87195550,\"orderRelationId\":-1,\"name\":\"卫浴小件安装\",\"acceptType\":0,\"buyerId\":2201600041,\"buyerName\":\"肖先生\",\"buyerZipCode\":\"222222\",\"attributes\":{\"itemSkuProperty\":\"颜色分类:军绿色\",\"lbxNo\":\"LP00114815619306\",\"service_pattern\":\"platform\",\"servPrice\":\"5500\",\"servSkuName\":\"\"},\"buyAmount\":1}}";
         SendPost sendPost = new SendPost();
         try {
             StatusUpdate statusUpdate = gson.fromJson(JsonStr, StatusUpdate.class);
@@ -114,49 +114,49 @@ public class SendPost {
     }
 
 
-    public void setMessageOrderInfo(String SignatureNonce, String Timestamp, String Topic, String JsonStr) throws UnsupportedEncodingException {
-        Gson gson = new Gson();
-        String param1 = "AccessSecret=" + AccessSecret + "&AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp;
-        String Signature = null;
-        try {
-            Signature = md5EndcodeString(param1);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        BASE64Encoder base64en = new BASE64Encoder();
-        Signature = base64en.encode(Signature.getBytes());
-
-        //String param2 = "AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp + "&Signature=" + Signature + "&Topic=" + Topic + "&JsonStr" + JsonStr;
-
-
-        //WorkcardInfo
-        DataObjectOrderInfo dataObject = new DataObjectOrderInfo();
-        dataObject = dataObject.jsonToDataOrderInfo(JsonStr);
-
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put("AccessKeyId", AccessKeyId);
-        params.put("SignatureNonce", SignatureNonce);
-        params.put("Timestamp", Timestamp);
-        params.put("Signature", Signature);
-        params.put("Topic", Topic);
-        //params.put("JsonStr", JsonStr);
-        params.put("JsonStr", dataObject);
-//        params.put("JsonStr", orderInfo);
-
-        String bodyString = gson.toJson(params);
-        System.out.println(bodyString);
-
-
-
-        //sendPostMessage("http://218.5.155.206:8099/topevent?topic=" + Topic, params, "utf-8");
-       // sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString, "utf-8");
-        sendPostMessage("http://218.5.155.206:8080/topevent?topic=" + Topic, bodyString, "utf-8");
-//        sendPostMessage("http://demo.baogongpo.cn/TOP/v1/demo.php", bodyString, "utf-8");
-//        sendPostMessage("http://demo.baogongpo.cn/test/post.php", bodyString, "utf-8");
-
-        //doJsonPost("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString);
-        //doJsonPost("http://demo.baogongpo.cn/test/post.php", bodyString);
-    }
+//    public void setMessageOrderInfo(String SignatureNonce, String Timestamp, String Topic, String JsonStr) throws UnsupportedEncodingException {
+//        Gson gson = new Gson();
+//        String param1 = "AccessSecret=" + AccessSecret + "&AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp;
+//        String Signature = null;
+//        try {
+//            Signature = md5EndcodeString(param1);
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+//        BASE64Encoder base64en = new BASE64Encoder();
+//        Signature = base64en.encode(Signature.getBytes());
+//
+//        //String param2 = "AccessKeyId=" + AccessKeyId + "&SignatureNonce=" + SignatureNonce + "&Timestamp=" + Timestamp + "&Signature=" + Signature + "&Topic=" + Topic + "&JsonStr" + JsonStr;
+//
+//
+//        //WorkcardInfo
+//        DataObjectOrderInfo dataObject = new DataObjectOrderInfo();
+//        dataObject = dataObject.jsonToDataOrderInfo(JsonStr);
+//
+//        Map<String, Object> params = new HashMap<String, Object>();
+//        params.put("AccessKeyId", AccessKeyId);
+//        params.put("SignatureNonce", SignatureNonce);
+//        params.put("Timestamp", Timestamp);
+//        params.put("Signature", Signature);
+//        params.put("Topic", Topic);
+//        //params.put("JsonStr", JsonStr);
+//        params.put("JsonStr", dataObject);
+////        params.put("JsonStr", orderInfo);
+//
+//        String bodyString = gson.toJson(params);
+//        System.out.println(bodyString);
+//
+//
+//
+//        //sendPostMessage("http://218.5.155.206:8099/topevent?topic=" + Topic, params, "utf-8");
+//       // sendPostMessage("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString, "utf-8");
+//        sendPostMessage("http://218.5.155.206:8080/topevent?topic=" + Topic, bodyString, "utf-8");
+////        sendPostMessage("http://demo.baogongpo.cn/TOP/v1/demo.php", bodyString, "utf-8");
+////        sendPostMessage("http://demo.baogongpo.cn/test/post.php", bodyString, "utf-8");
+//
+//        //doJsonPost("http://218.5.155.206:7777/topevent?topic=" + Topic, bodyString);
+//        //doJsonPost("http://demo.baogongpo.cn/test/post.php", bodyString);
+//    }
 
     public void setMessageObj(String SignatureNonce, String Timestamp, String Topic, Object object) throws UnsupportedEncodingException {
         Gson gson = new Gson();
