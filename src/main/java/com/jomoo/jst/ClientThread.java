@@ -1,10 +1,7 @@
 package com.jomoo.jst;
 
 import com.google.gson.Gson;
-import com.jomoo.jst.DataObject.AnomalyInfo;
-import com.jomoo.jst.DataObject.OrderInfo;
-import com.jomoo.jst.DataObject.SignCreate;
-import com.jomoo.jst.DataObject.StatusUpdate;
+import com.jomoo.jst.DataObject.*;
 import com.taobao.api.internal.tmc.Message;
 import com.taobao.api.internal.tmc.TmcClient;
 import com.taobao.api.internal.tmc.MessageHandler;
@@ -77,16 +74,8 @@ public class ClientThread extends Thread {
                          * 新的工单
                          */
                         if (message.getTopic().equals("tmall_fuwu_WorkcardInfo")) {
-                            //System.out.println("getContent: " + message.getContent());
-                            //System.out.println("getTopic:" + message.getTopic());
-                            //System.out.println("getId:" + message.getId());
 
-                            System.out.println("UID_INTEGER=" + uid + " APPKEY_STRING=" + appkeyString + " SECRET_STRING=" + secretString);
-                            System.out.println("\n--------------------------------------------------------\n");
-                            System.out.println("getId: " + message.getId() + "\n");
-                            System.out.println("getTopic: " + message.getTopic() + "\n");
-                            System.out.println("getContent: " + message.getContent() + "\n");
-                            System.out.println("\n========================================================\n\n\n\n\n");
+                            systemOut(message);
 
 
                             String contentString = message.getContent();
@@ -108,12 +97,7 @@ public class ClientThread extends Thread {
                          */
                         if (message.getTopic().equals("tmall_fuwu_AnomalyRecourse")) {
 
-                            System.out.println("UID_INTEGER=" + uid + " APPKEY_STRING=" + appkeyString + " SECRET_STRING=" + secretString);
-                            System.out.println("\n--------------------------------------------------------\n");
-                            System.out.println("getId: " + message.getId() + "\n");
-                            System.out.println("getTopic: " + message.getTopic() + "\n");
-                            System.out.println("getContent: " + message.getContent() + "\n");
-                            System.out.println("\n========================================================\n\n\n\n\n");
+                            systemOut(message);
 
 
                             String contentString = message.getContent();
@@ -135,12 +119,7 @@ public class ClientThread extends Thread {
                          */
                         if (message.getTopic().equals("tmall_fuwu_WorkcardStatusUpdate")) {
 
-                            System.out.println("UID_INTEGER=" + uid + " APPKEY_STRING=" + appkeyString + " SECRET_STRING=" + secretString);
-                            System.out.println("\n--------------------------------------------------------\n");
-                            System.out.println("getId: " + message.getId() + "\n");
-                            System.out.println("getTopic: " + message.getTopic() + "\n");
-                            System.out.println("getContent: " + message.getContent() + "\n");
-                            System.out.println("\n========================================================\n\n\n\n\n");
+                            systemOut(message);
 
                             String contentString = message.getContent();
                             try {
@@ -160,12 +139,7 @@ public class ClientThread extends Thread {
                          */
                         if (message.getTopic().equals("tmall_serviceplatform_SignCreate")) {
 
-                            System.out.println("UID_INTEGER=" + uid + " APPKEY_STRING=" + appkeyString + " SECRET_STRING=" + secretString);
-                            System.out.println("\n--------------------------------------------------------\n");
-                            System.out.println("getId: " + message.getId() + "\n");
-                            System.out.println("getTopic: " + message.getTopic() + "\n");
-                            System.out.println("getContent: " + message.getContent() + "\n");
-                            System.out.println("\n========================================================\n\n\n\n\n");
+                            systemOut(message);
 
                             String contentString = message.getContent();
                             try {
@@ -180,13 +154,26 @@ public class ClientThread extends Thread {
 
                         }
 
+                        /**
+                         * 监控日志
+                         */
+                        if (message.getTopic().equals("tmall_fuwu_ServiceMonitorMessage")) {
+                            systemOut(message);
+
+
+                            String contentString = message.getContent();
+
+                            try {
+                                ServiceMonitorMessage serviceMonitorMessage = gson.fromJson(contentString, ServiceMonitorMessage.class);
+                                sendPost.setMessageObj(SignatureNonce, Timestamp, message.getTopic(), serviceMonitorMessage);
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
                     } catch (Exception e) {
                         e.printStackTrace();
-                        status.fail(); // 消息处理失败回滚，服务端需要重发
-                        // 重试注意：不是所有的异常都需要系统重试。
-                        // 对于字段不全、主键冲突问题，导致写DB异常，不可重试，否则消息会一直重发
-                        // 对于，由于网络问题，权限问题导致的失败，可重试。
-                        // 重试时间 5分钟不等，不要滥用，否则会引起雪崩
+                        status.fail();
                     }
                 }
             });
@@ -207,6 +194,15 @@ public class ClientThread extends Thread {
         }
 
         //System.out.println("Thread " + threadName + " exiting.");
+    }
+
+    private void systemOut(Message message) {
+        System.out.println("UID_INTEGER=" + uid + " APPKEY_STRING=" + appkeyString + " SECRET_STRING=" + secretString);
+        System.out.println("\n--------------------------------------------------------\n");
+        System.out.println("getId: " + message.getId() + "\n");
+        System.out.println("getTopic: " + message.getTopic() + "\n");
+        System.out.println("getContent: " + message.getContent() + "\n");
+        System.out.println("\n========================================================\n\n\n\n\n");
     }
 
     public void start() {

@@ -113,6 +113,26 @@ public class SendPost {
 
     }
 
+    private static void ServiceMonitorMessage() {
+        Gson gson = new Gson();
+
+        String SignatureNonce = UUID.randomUUID().toString();
+        String Timestamp = new DateTime().toString("yyyy-MM-dd HH:mm:ss", Locale.CHINESE);
+
+        String Topic = "tmall_fuwu_ServiceMonitorMessage";
+        String JsonStr = "{\"id\":33776424,\"result\":{\"content\":\"请及时处理签收超过16小时未预约的工单，详情如下：父订单编号：268242725497663799，服务子订单：268242725500663799，服务工\n" +
+                "单号：103427952\",\"id\":33776424,\"level\":1,\"gmtCreate\":\"2019-03-15 09:15:05\",\"receiverId\":2191428291,\"status\":1,\"ruleId\":\"JZ_INSTALL_RETURN_RESERVE_INFO_WARNING_RULE\",\"\n" +
+                "serviceCode\":\"卫浴大件安装\",\"bizType\":1,\"bizId\":103427952}}";
+
+        SendPost sendPost = new SendPost();
+        try {
+            StatusUpdate statusUpdate = gson.fromJson(JsonStr, StatusUpdate.class);
+            sendPost.setMessageObj(SignatureNonce, Timestamp, Topic, statusUpdate);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 //    public void setMessageOrderInfo(String SignatureNonce, String Timestamp, String Topic, String JsonStr) throws UnsupportedEncodingException {
 //        Gson gson = new Gson();
